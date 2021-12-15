@@ -43,6 +43,8 @@ def read():
 def createn():
     global choice
     amount = int(input("How many naughty children: "))
+    with open(f"naughtychildrenlist.txt", "w", encoding="utf8") as listaszn:
+        listaszn.write("")
     with open(f"naughtychildrenlist.txt", "r", encoding="utf8") as listas:
         listn = listas.readlines()
     with open(f"naughtychildrenlist.txt", "w", encoding="utf8") as lista:
