@@ -43,15 +43,19 @@ def read():
 def createn():
     global choice
     amount = int(input("How many naughty children: "))
+    with open(f"naughtychildrenlist.txt", "r", encoding="utf8") as listas:
+        listn = listas.readlines()
     with open(f"naughtychildrenlist.txt", "w", encoding="utf8") as lista:
         for x in range(amount):
             print(x+1, end= ": ")
             add = input("")
             if x < amount:
-                lista.write(add)
-                lista.write("\n")
+                listn.append(add)
+                listn.append("\n")
             else:
-                lista.write(add)
+                listn.append(add)
+        for y in listn:
+            lista.write(y)
     choice = -1
 
 
@@ -77,7 +81,7 @@ def menu():
         
         1. Skapa önskelista
         2. Läs önskelista
-        3. Skapa naughty list
+        3. Lägg till på naughty list
         4. Läs naughty list
 
 
