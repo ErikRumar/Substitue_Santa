@@ -74,8 +74,6 @@ def readn():
 
 
 def menu():
-    with open(f"naughtychildrenlist.txt", "w", encoding="utf8") as listaszn:
-        listaszn.write("")
     choice = -1
     while choice < 1 or choice > 5:
         print("""
@@ -83,8 +81,9 @@ def menu():
         
         1. Skapa önskelista
         2. Läs önskelista
-        3. Lägg till på naughty list
-        4. Läs naughty list
+        3. Skapa ny naughty list
+        4. Lägg till på naughty list
+        5. Läs naughty list
 
 
         """)
@@ -96,9 +95,14 @@ def menu():
             read()
             choice = -1
         if choice == 3:
+            with open(f"naughtychildrenlist.txt", "w", encoding="utf8") as listaszn:
+                listaszn.write("")
             createn()
             choice = -1
         if choice == 4:
+            createn()
+            choice = -1
+        if choice == 5:
             readn()
             choice = -1
         if choice == 3:
